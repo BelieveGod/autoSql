@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author LTJ
@@ -27,12 +29,16 @@ public class MockCheckData {
         Map<Integer, List<Integer>> deviceTypeMappingCkItemMap = new TreeMap<>();
         deviceTypeMappingCkItemMap.put(302, wheelCkItemList);
 
+        Stream<Integer> valueStream = Stream.iterate(20, seed -> seed+1);
+        int trainLogCnt=30;
+        List<Integer> valueList = valueStream.limit(trainLogCnt).collect(Collectors.toList());
+
         // 6编组轮子
         List<Integer> wheelPartList = new ArrayList<>(48);
         for(int i=0;i<24;i++){
             // 右轮子
             int rightPartid=10*(i+1)+1;
-            // 唑仑兹
+            // 左轮子
             int leftPartId=10*(i+1)+2;
             wheelPartList.add(rightPartid);
             wheelPartList.add(leftPartId);
@@ -57,11 +63,11 @@ public class MockCheckData {
                                     .append(j).append(",")
                                     .append("'").append(trainNos.get(i)).append("'").append(",")
                                     .append(ckItemList.get(z)).append(",")
-                                    .append(20).append(",")
+                                    .append(valueList.get(j-start)).append(",")
                                     .append(0).append(",")
                                     .append(partList.get(x)).append(",")
                                     .append(deviceType).append(",")
-                                    .append(20)
+                                    .append(valueList.get(j-start))
                                     .append(");")
                                     .toString();
                             sqls.add(sql);
