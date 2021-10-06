@@ -18,9 +18,9 @@ import java.util.stream.Stream;
 public class MockMileage {
 
     public static List<String> mockMileage(){
-        ArrayList<String> trainNos = CollUtil.newArrayList("G5001", "G5002", "G5003", "G5004");
+        ArrayList<String> trainNos = CollUtil.newArrayList("5001", "5002", "5003", "5004");
         Stream<Integer> mileageStream = Stream.iterate(10000, mileage -> mileage + 1000);
-        Stream<LocalDateTime> dayStream = Stream.iterate(LocalDateTime.of(2021, 6, 29,11,0,0), day -> day.plusDays(1));
+        Stream<LocalDateTime> dayStream = Stream.iterate(LocalDateTime.of(2021, 8, 1,11,0,0), day -> day.plusDays(1));
         final int N=30;
         List<Integer> mileageList = mileageStream.limit(N).collect(Collectors.toList());
         List<LocalDateTime> dayList = dayStream.limit(N).collect(Collectors.toList());

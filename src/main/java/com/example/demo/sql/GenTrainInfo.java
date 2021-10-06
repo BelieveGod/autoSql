@@ -21,7 +21,7 @@ public class GenTrainInfo {
 		//------------------------------>生成列车信息
 		int groupCount = 6;// 一列车有多少节车厢//----------------------------------------->注意配置17-0
 		int tainTotal = 100;// 总共车数量//----------------------------------------->注意配置17-1
-		String trainNoPre = "08";//------------------------------车号前缀 注意配置17-2
+		String trainNoPre = "17";//------------------------------车号前缀 注意配置17-2
 		
 		//读取车号
 		/*** List<String> lstTrainno = FileUtil.readLines(new File("E:\\trao.txt"),StandardCharsets.UTF_8);
@@ -49,7 +49,7 @@ public class GenTrainInfo {
 		
 		//-------------begin车厢信息 6节车厢
 		
-/*	String []  gpName  = new String []{"TC1","MP1","M1","M2","MP2","TC2"};//----------------------------------------->注意配置17-4
+	/*String []  gpName  = new String []{"TC1","MP1","M1","M2","MP2","TC2"};//----------------------------------------->注意配置17-4
         String []  gpNameSelf  = new String []{"","","","","",""};//----------------------------------------->注意配置17-5
     	for(String no:trainsNo){
         	String trins = "INSERT INTO train_parts  (train_no_id, train_no, part_code, part_name, part_type, part_name_self) VALUES  ("+(traininfoid++)+", '"+no+ "', ";
@@ -157,7 +157,7 @@ String [] lunName = new String [] {	 "1车-2轮",	 "1车-1轮","1车-4轮","1车
 		
 		//通用
 
-/*  int  []lunCode = new int []  {12,11,22,21,32,31,42,41,
+ /* int  []lunCode = new int []  {12,11,22,21,32,31,42,41,
                   52,51,62,61,72,71,82,81,
                  92,91,102,101,112,111,122,121,
                  161,162,151,152,141,142,131,132,
@@ -238,7 +238,7 @@ String [] lunName = new String [] {	 "TC1-2",	 "TC1-1","TC1-4","TC1-3","TC1-6","
 		
 		
     	//车轴信息
-    /* int  [] zhouCode = new int []  {1,2,3,4,
+   /*  int  [] zhouCode = new int []  {1,2,3,4,
 	        		                                                      5,6,7,8,
 	        		                                                      9,10,11,12,
 	        		                                                      13,14,15,16,
@@ -273,11 +273,11 @@ String [] lunName = new String [] {	 "TC1-2",	 "TC1-1","TC1-4","TC1-3","TC1-6","
 	        		sqlScript.add(sb.toString());
 	        		sb.setLength(0);
 	        	}
-	        }*/
-		
+	        }
+		*/
 		
 	   	//转向架信息
-	   /*int  [] jiaCode =  new int [] {1,2,
+	 /*  int  [] jiaCode =  new int [] {1,2,
 	        		 3,4,
 	        		 5,6,
 	        		 7,8,
@@ -312,7 +312,7 @@ String [] lunName = new String [] {	 "TC1-2",	 "TC1-1","TC1-4","TC1-3","TC1-6","
 	        }*/
 		
 	        //-------------------------------->受电弓部件
-	/*int [] pantographCode = new int [] {1,2};//------------->注意这里是2个弓//----------------------------------------->注意配置17-15
+	int [] pantographCode = new int [] {1,2};//------------->注意这里是2个弓//----------------------------------------->注意配置17-15
 		   String [] pantographName = new String []{"MP1","MP2"};//地铁转向架国标名称//----------------------------------------->注意配置17-16
 	       String [] pantographSelfName = new String [] {"",""};//地方地铁转向架名称//----------------------------------------->注意配置17-17
 	        
@@ -327,7 +327,7 @@ String [] lunName = new String [] {	 "TC1-2",	 "TC1-1","TC1-4","TC1-3","TC1-6","
 	        		sqlScript.add(sb.toString());
 	        		sb.setLength(0);
 	        	}
-	        }*/
+	        }
 
     	
 		 writeFile( sqlScript);//生成列车信息脚本

@@ -13,7 +13,7 @@ import java.util.List;
 public class MockTrainInfo {
 
     public static List<String> mockTrainInfo(){
-        ArrayList<String> trainNos = CollUtil.newArrayList("G5001", "G5002", "G5003", "G5004");
+        List<String> trainNos = generateTrainNos("G5", 100);
         // 车厢数
         int groupCount = 6;
         int status=1;
@@ -39,7 +39,22 @@ public class MockTrainInfo {
 
     public static void main(String[] args) {
         List<String> strings = mockTrainInfo();
-        FileWriter fileWriter = new FileWriter("e:\\mockTrainInfo.sql");
+        FileWriter fileWriter = new FileWriter("e:\\mock\\mockTrainInfo.sql");
         fileWriter.writeLines(strings);
+    }
+
+    /**
+     * 生成列车号
+     * @param prefix
+     * @param num
+     * @return
+     */
+    public static List<String> generateTrainNos(final String prefix,int num){
+        List<String> trainNos = new ArrayList<>(num);
+        for(int i=1;i<=num;i++){
+            String trainNo = String.format("%s%03d", prefix, i);
+            trainNos.add(trainNo);
+        }
+        return trainNos;
     }
 }
