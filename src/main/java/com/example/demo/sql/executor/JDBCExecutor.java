@@ -37,7 +37,7 @@ public class JDBCExecutor {
             log.info("schema:{}", connection.getSchema());
             log.info("catalog:{}", connection.getCatalog());
 
-            int fileNo=318;
+            int fileNo=1118;
             int endNo=2425;
             Statement statement = connection.createStatement();
             String prefix = "INSERT INTO check_data_log(train_log_id,train_no,point_type_id,data_value,mutation,part_id,device_type_id,da_value)VALUES";

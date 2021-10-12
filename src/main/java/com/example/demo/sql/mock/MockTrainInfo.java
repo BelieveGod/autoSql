@@ -12,8 +12,16 @@ import java.util.List;
  */
 public class MockTrainInfo {
 
+    public static void main(String[] args) {
+//        List<String> strings = mockTrainInfo();
+//        FileWriter fileWriter = new FileWriter("e:\\mock\\mockTrainInfo.sql");
+//        fileWriter.writeLines(strings);
+        List<String> trainNos = generateTrainNos("5", 100);
+        System.out.println("trainNos = " + trainNos);
+    }
+
     public static List<String> mockTrainInfo(){
-        List<String> trainNos = generateTrainNos("G5", 100);
+        List<String> trainNos = generateTrainNos("5", 100);
         // 车厢数
         int groupCount = 6;
         int status=1;
@@ -37,11 +45,7 @@ public class MockTrainInfo {
         return sqls;
     }
 
-    public static void main(String[] args) {
-        List<String> strings = mockTrainInfo();
-        FileWriter fileWriter = new FileWriter("e:\\mock\\mockTrainInfo.sql");
-        fileWriter.writeLines(strings);
-    }
+
 
     /**
      * 生成列车号

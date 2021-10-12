@@ -122,7 +122,7 @@ public class MockCheckData {
         return sqls;
     }
 
-    private static Double generateValue(Integer deviceType, Integer ckId) {
+    public static Double generateValue(Integer deviceType, Integer ckId) {
         String key = deviceType + "+" + ckId;
         String telemetry = telemetryMap.get(key);
         if(telemetry==null){
